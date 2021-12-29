@@ -1,0 +1,30 @@
+*{
+    margin: 0px;
+}
+
+#title{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(18, 84, 122);
+    font-weight: 600;
+    margin: 10px auto 80px;
+    text-align: center;
+}
+
+#rgb-color{
+    font-weight: 200;
+    text-align: center;
+    margin: 30px auto;
+}
+
+#ball-container {
+    text-align: center;
+}
+
+.ball{
+    display: inline-block;
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    border: 2px solid black;
+    margin: 20px 15px;
+}
