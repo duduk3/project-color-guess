@@ -28,3 +28,12 @@
     border: 2px solid black;
     margin: 20px 15px;
 }
+
+#answer-container{
+
+}
+
+#answer{
+    text-align: center;
+    margin: 30px auto;
+}
