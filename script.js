@@ -18,7 +18,6 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable prefer-const */
 let titleRGB = document.querySelector('#rgb-color');
-let sortRGB = Math.floor(Math.random() * 6) + 1;
 let scoreText = document.querySelector('#score');
 let score = 0;
 
@@ -28,12 +27,13 @@ let ball3 = document.querySelector('#ball-3');
 let ball4 = document.querySelector('#ball-4');
 let ball5 = document.querySelector('#ball-5');
 let ball6 = document.querySelector('#ball-6');
+let sortRGB = 0;
 let rgb1 = 0;
 let rgb2 = 0;
 let rgb3 = 0;
 
-
 function sortBalls(){
+    sortRGB = Math.floor(Math.random() * 6) + 1;
     rgb1 = Math.floor(Math.random() * 256);
     rgb2 = Math.floor(Math.random() * 256);
     rgb3 = Math.floor(Math.random() * 256);
@@ -122,6 +122,7 @@ resetBtn.addEventListener('click', function(){
     sortBalls();
     insertColor();
     insertColorText();
+    answer.innerText = '"Escolha uma cor"';
     });
 
 
