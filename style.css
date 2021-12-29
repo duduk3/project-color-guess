@@ -37,3 +37,9 @@
     text-align: center;
     margin: 30px auto;
 }
+
+#reset-game{
+    display: block;
+    margin: 10px auto;
+    align-items: center;
+}

@@ -1,3 +1,8 @@
+/* eslint-disable no-restricted-globals */
+/* eslint-disable no-undef */
+/* eslint-disable prefer-arrow-callback */
+/* eslint-disable func-names */
+/* eslint-disable space-before-function-paren */
 /* eslint-disable quotes */
 /* eslint-disable sonarjs/no-duplicated-branches */
 /* eslint-disable brace-style */
@@ -87,3 +92,10 @@ function showColor(event){
         answer.innerText = "Errou! Tente novamente!";
     }
 }
+
+let resetBtn = document.querySelector("#reset-game");
+
+resetBtn.addEventListener('click', function(){
+    location.reload();
+});
+
