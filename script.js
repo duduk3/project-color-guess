@@ -19,6 +19,8 @@
 /* eslint-disable prefer-const */
 let titleRGB = document.querySelector('#rgb-color');
 let sortRGB = Math.floor(Math.random() * 6) + 1;
+let scoreText = document.querySelector('#score');
+let score = 0;
 
 let ball1 = document.querySelector('#ball-1');
 let ball2 = document.querySelector('#ball-2');
@@ -26,19 +28,26 @@ let ball3 = document.querySelector('#ball-3');
 let ball4 = document.querySelector('#ball-4');
 let ball5 = document.querySelector('#ball-5');
 let ball6 = document.querySelector('#ball-6');
+let rgb1 = 0;
+let rgb2 = 0;
+let rgb3 = 0;
 
-let rgb1 = Math.floor(Math.random() * 256);
-let rgb2 = Math.floor(Math.random() * 256);
-let rgb3 = Math.floor(Math.random() * 256);
 
-ball1.style.backgroundColor = 'rgb(' + rgb1 + ',' + rgb2 + ',' + rgb3 + ')';
-ball2.style.backgroundColor = 'rgb(' + rgb1 + ',' + rgb3 + ',' + rgb2 + ')';
-ball3.style.backgroundColor = 'rgb(' + rgb3 + ',' + rgb2 + ',' + rgb1 + ')';
-ball4.style.backgroundColor = 'rgb(' + rgb2 + ',' + rgb1 + ',' + rgb3 + ')';
-ball5.style.backgroundColor = 'rgb(' + rgb2 + ',' + rgb3 + ',' + rgb1 + ')';
-ball6.style.backgroundColor = 'rgb(' + rgb3 + ',' + rgb1 + ',' + rgb2 + ')';
+function sortBalls(){
+    rgb1 = Math.floor(Math.random() * 256);
+    rgb2 = Math.floor(Math.random() * 256);
+    rgb3 = Math.floor(Math.random() * 256);
+}
 
-function insertText(){
+function insertColor(){
+    ball1.style.backgroundColor = 'rgb(' + rgb1 + ',' + rgb2 + ',' + rgb3 + ')';
+    ball2.style.backgroundColor = 'rgb(' + rgb1 + ',' + rgb3 + ',' + rgb2 + ')';
+    ball3.style.backgroundColor = 'rgb(' + rgb3 + ',' + rgb2 + ',' + rgb1 + ')';
+    ball4.style.backgroundColor = 'rgb(' + rgb2 + ',' + rgb1 + ',' + rgb3 + ')';
+    ball5.style.backgroundColor = 'rgb(' + rgb2 + ',' + rgb3 + ',' + rgb1 + ')';
+    ball6.style.backgroundColor = 'rgb(' + rgb3 + ',' + rgb1 + ',' + rgb2 + ')';
+}
+function insertColorText(){
     if(sortRGB === 1){
         titleRGB.innerText = '(' + rgb1 + ', ' + rgb2 + ', ' + rgb3 + ')';
     }
@@ -59,34 +68,48 @@ function insertText(){
     }
 }
 
-insertText();
+sortBalls();
+insertColor();
+insertColorText();
 
-ball1.addEventListener('click', showColor);
-ball2.addEventListener('click', showColor);
-ball3.addEventListener('click', showColor);
-ball4.addEventListener('click', showColor);
-ball5.addEventListener('click', showColor);
-ball6.addEventListener('click', showColor);
+ball1.addEventListener('click', chooseColor);
+ball2.addEventListener('click', chooseColor);
+ball3.addEventListener('click', chooseColor);
+ball4.addEventListener('click', chooseColor);
+ball5.addEventListener('click', chooseColor);
+ball6.addEventListener('click', chooseColor);
 
-function showColor(event){
+function chooseColor(event){
     let answer = document.querySelector('#answer');
     if (event.target === ball1 && sortRGB === 1) {
         answer.innerText = 'Acertou!';
+        score += 3;
+        scoreText.innerText = 'Placar: ' + score;
     }
     else if (event.target === ball2 && sortRGB === 2) {
         answer.innerText = 'Acertou!';
+        score += 3;
+        scoreText.innerText = 'Placar: ' + score;
     }
     else if (event.target === ball3 && sortRGB === 3) {
         answer.innerText = 'Acertou!';
+        score += 3;
+        scoreText.innerText = 'Placar: ' + score;
     }
     else if (event.target === ball4 && sortRGB === 4) {
         answer.innerText = 'Acertou!';
+        score += 3;
+        scoreText.innerText = 'Placar: ' + score;
     }
     else if (event.target === ball5 && sortRGB === 5) {
         answer.innerText = 'Acertou!';
+        score += 3;
+        scoreText.innerText = 'Placar: ' + score;
     }
     else if (event.target === ball6 && sortRGB === 6) {
         answer.innerText = 'Acertou!';
+        score += 3;
+        scoreText.innerText = 'Placar: ' + score;
     }
     else {
         answer.innerText = "Errou! Tente novamente!";
@@ -96,6 +119,9 @@ function showColor(event){
 let resetBtn = document.querySelector("#reset-game");
 
 resetBtn.addEventListener('click', function(){
-    location.reload();
-});
+    sortBalls();
+    insertColor();
+    insertColorText();
+    });
+
 

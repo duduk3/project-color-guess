@@ -13,7 +13,14 @@
 #rgb-color{
     font-weight: 200;
     text-align: center;
-    margin: 30px auto;
+    margin: 10px auto 10px;
+}
+
+#score{
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+    margin: 5px auto 10px;
 }
 
 #ball-container {
@@ -27,10 +34,6 @@
     border-radius: 50%;
     border: 2px solid black;
     margin: 20px 15px;
-}
-
-#answer-container{
-
 }
 
 #answer{
